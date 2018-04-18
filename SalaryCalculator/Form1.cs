@@ -30,6 +30,11 @@ namespace SalaryCalculator
 
         private void button_skaiciuotiTab1_Click(object sender, EventArgs e)
         {
+            AtlyginimasIRankas();
+        }
+
+        private void AtlyginimasIRankas ()
+        {
             atlyginimaspopieriuje = float.Parse(textBox_ivestiAntPopieriaus.Text);
 
             gmp = (atlyginimaspopieriuje - (380 - (0.5f * (atlyginimaspopieriuje - 400))))
@@ -44,6 +49,13 @@ namespace SalaryCalculator
             darbovietoskaina = atlyginimaspopieriuje + (atlyginimaspopieriuje * 0.2748f) +
                 (atlyginimaspopieriuje * 0.03f) + (atlyginimaspopieriuje * 0.002f) +
                 (atlyginimaspopieriuje * 0.005f);
+
+            if (checkBox_autorinesSutartysTab1.CheckState == CheckState.Checked)
+            {
+                ApskaiciuotiAutorines();
+                visotab1 = atlyginimasirankas + autuzdarbis;
+                textBox_isvedaVisoIRankas.Text = visotab1.ToString();
+            }
 
             textBox_isvedaIRankas.Text = atlyginimasirankas.ToString();
             textBox_isvedaSodrai.Text = sodraitab1.ToString();
@@ -65,15 +77,15 @@ namespace SalaryCalculator
             
         }
 
-        private void AutoriniuSutarciuSkaiciuokle (float atlyginimasirankas)
+        private float ApskaiciuotiAutorines ()
         {
             autorinespajamos = float.Parse(textBox_ivestiAutorinesPopieriuje.Text);
             procentasnuoaut = float.Parse(textBox_procNuoAutoriniu.Text);
-            autuzdarbis = autorinespajamos - (autorinespajamos * procentasnuoaut);
-            visotab1 = atlyginimasirankas + autuzdarbis;
-
+            autuzdarbis = autorinespajamos - (autorinespajamos * (procentasnuoaut / 100));
+           
             textBox_isvedaAutoriniuAlga.Text = autuzdarbis.ToString();
-            textBox_isvedaVisoIRankas.Text = visotab1.ToString();
+
+            return autuzdarbis;
         }
 
         private void textBox_ivestiAutorinesPopieriuje_TextChanged(object sender, EventArgs e) => 
