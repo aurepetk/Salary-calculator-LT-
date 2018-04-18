@@ -1,0 +1,10 @@
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\bin\Debug\SalaryCalculator.exe.config
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\bin\Debug\SalaryCalculator.exe
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\bin\Debug\SalaryCalculator.pdb
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\obj\Debug\SalaryCalculator.csprojResolveAssemblyReference.cache
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\obj\Debug\SalaryCalculator.Form1.resources
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\obj\Debug\SalaryCalculator.Properties.Resources.resources
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\obj\Debug\SalaryCalculator.csproj.GenerateResource.cache
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\obj\Debug\SalaryCalculator.csproj.CoreCompileInputs.cache
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\obj\Debug\SalaryCalculator.exe
+C:\Users\aurel\OneDrive\Desktop\Projektai\SalaryCalculator\SalaryCalculator\obj\Debug\SalaryCalculator.pdb
