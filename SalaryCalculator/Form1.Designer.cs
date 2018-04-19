@@ -31,7 +31,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button_isvalytiTab1 = new System.Windows.Forms.Button();
-            this.button_koreguotiTab1 = new System.Windows.Forms.Button();
             this.textBox_isvedaVisoIRankas = new System.Windows.Forms.TextBox();
             this.label_VisoTab1 = new System.Windows.Forms.Label();
             this.textBox_isvedaAutoriniuAlga = new System.Windows.Forms.TextBox();
@@ -53,26 +52,26 @@
             this.button_skaiciuotiTab1 = new System.Windows.Forms.Button();
             this.textBox_ivestiAntPopieriaus = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label_autSutTab2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox_isvedaVisoTab2 = new System.Windows.Forms.TextBox();
+            this.textBox_isvedaAutAntPop = new System.Windows.Forms.TextBox();
+            this.label_visoAntPop = new System.Windows.Forms.Label();
+            this.label_autAntPop = new System.Windows.Forms.Label();
+            this.textBox_isvedaDarbMokTab2 = new System.Windows.Forms.TextBox();
+            this.textBox_isvedaSveikatos = new System.Windows.Forms.TextBox();
+            this.textBox_isvedaSodros = new System.Windows.Forms.TextBox();
+            this.textBox_isvedaPajamuMok = new System.Windows.Forms.TextBox();
+            this.textBox_isvedaAntPop = new System.Windows.Forms.TextBox();
+            this.button_skaiciuotiTab2 = new System.Windows.Forms.Button();
+            this.textBox_ivestiAutIRankas = new System.Windows.Forms.TextBox();
+            this.checkBox_autonominesTab2 = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox_ivestiIRankas = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,7 +82,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(230, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(542, 414);
@@ -92,7 +91,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.button_isvalytiTab1);
-            this.tabPage1.Controls.Add(this.button_koreguotiTab1);
             this.tabPage1.Controls.Add(this.textBox_isvedaVisoIRankas);
             this.tabPage1.Controls.Add(this.label_VisoTab1);
             this.tabPage1.Controls.Add(this.textBox_isvedaAutoriniuAlga);
@@ -123,21 +121,13 @@
             // 
             // button_isvalytiTab1
             // 
-            this.button_isvalytiTab1.Location = new System.Drawing.Point(215, 184);
+            this.button_isvalytiTab1.Location = new System.Drawing.Point(112, 184);
             this.button_isvalytiTab1.Name = "button_isvalytiTab1";
             this.button_isvalytiTab1.Size = new System.Drawing.Size(75, 23);
             this.button_isvalytiTab1.TabIndex = 21;
             this.button_isvalytiTab1.Text = "Išvalyti";
             this.button_isvalytiTab1.UseVisualStyleBackColor = true;
-            // 
-            // button_koreguotiTab1
-            // 
-            this.button_koreguotiTab1.Location = new System.Drawing.Point(117, 184);
-            this.button_koreguotiTab1.Name = "button_koreguotiTab1";
-            this.button_koreguotiTab1.Size = new System.Drawing.Size(75, 23);
-            this.button_koreguotiTab1.TabIndex = 20;
-            this.button_koreguotiTab1.Text = "Koreguoti";
-            this.button_koreguotiTab1.UseVisualStyleBackColor = true;
+            this.button_isvalytiTab1.Click += new System.EventHandler(this.button_isvalytiTab1_Click);
             // 
             // textBox_isvedaVisoIRankas
             // 
@@ -322,26 +312,26 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label_autSutTab2);
             this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.textBox18);
-            this.tabPage2.Controls.Add(this.textBox17);
-            this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.textBox16);
-            this.tabPage2.Controls.Add(this.textBox15);
-            this.tabPage2.Controls.Add(this.textBox14);
-            this.tabPage2.Controls.Add(this.textBox13);
-            this.tabPage2.Controls.Add(this.textBox12);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.textBox11);
-            this.tabPage2.Controls.Add(this.checkBox2);
+            this.tabPage2.Controls.Add(this.textBox_isvedaVisoTab2);
+            this.tabPage2.Controls.Add(this.textBox_isvedaAutAntPop);
+            this.tabPage2.Controls.Add(this.label_visoAntPop);
+            this.tabPage2.Controls.Add(this.label_autAntPop);
+            this.tabPage2.Controls.Add(this.textBox_isvedaDarbMokTab2);
+            this.tabPage2.Controls.Add(this.textBox_isvedaSveikatos);
+            this.tabPage2.Controls.Add(this.textBox_isvedaSodros);
+            this.tabPage2.Controls.Add(this.textBox_isvedaPajamuMok);
+            this.tabPage2.Controls.Add(this.textBox_isvedaAntPop);
+            this.tabPage2.Controls.Add(this.button_skaiciuotiTab2);
+            this.tabPage2.Controls.Add(this.textBox_ivestiAutIRankas);
+            this.tabPage2.Controls.Add(this.checkBox_autonominesTab2);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.textBox10);
+            this.tabPage2.Controls.Add(this.textBox_ivestiIRankas);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -351,116 +341,131 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label_autSutTab2
+            // 
+            this.label_autSutTab2.AutoSize = true;
+            this.label_autSutTab2.Location = new System.Drawing.Point(10, 73);
+            this.label_autSutTab2.Name = "label_autSutTab2";
+            this.label_autSutTab2.Size = new System.Drawing.Size(230, 13);
+            this.label_autSutTab2.TabIndex = 22;
+            this.label_autSutTab2.Text = "Įveskite pajamas iš autorinių sutarčių ,,į rankas\"";
+            this.label_autSutTab2.Visible = false;
+            this.label_autSutTab2.Click += new System.EventHandler(this.label_autSutTab2_Click);
+            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(182, 99);
+            this.button4.Location = new System.Drawing.Point(87, 99);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 21;
             this.button4.Text = "Išvalyti";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // textBox_isvedaVisoTab2
             // 
-            this.button3.Location = new System.Drawing.Point(96, 99);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Koreguoti";
-            this.button3.UseVisualStyleBackColor = true;
+            this.textBox_isvedaVisoTab2.Location = new System.Drawing.Point(179, 300);
+            this.textBox_isvedaVisoTab2.Name = "textBox_isvedaVisoTab2";
+            this.textBox_isvedaVisoTab2.Size = new System.Drawing.Size(100, 20);
+            this.textBox_isvedaVisoTab2.TabIndex = 19;
+            this.textBox_isvedaVisoTab2.Visible = false;
+            this.textBox_isvedaVisoTab2.TextChanged += new System.EventHandler(this.textBox_isvedaVisoTab2_TextChanged);
             // 
-            // textBox18
+            // textBox_isvedaAutAntPop
             // 
-            this.textBox18.Location = new System.Drawing.Point(179, 300);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(100, 20);
-            this.textBox18.TabIndex = 19;
+            this.textBox_isvedaAutAntPop.Location = new System.Drawing.Point(267, 273);
+            this.textBox_isvedaAutAntPop.Name = "textBox_isvedaAutAntPop";
+            this.textBox_isvedaAutAntPop.Size = new System.Drawing.Size(100, 20);
+            this.textBox_isvedaAutAntPop.TabIndex = 18;
+            this.textBox_isvedaAutAntPop.Visible = false;
+            this.textBox_isvedaAutAntPop.TextChanged += new System.EventHandler(this.textBox_isvedaAutAntPop_TextChanged);
             // 
-            // textBox17
+            // label_visoAntPop
             // 
-            this.textBox17.Location = new System.Drawing.Point(267, 273);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 20);
-            this.textBox17.TabIndex = 18;
+            this.label_visoAntPop.AutoSize = true;
+            this.label_visoAntPop.Location = new System.Drawing.Point(16, 300);
+            this.label_visoAntPop.Name = "label_visoAntPop";
+            this.label_visoAntPop.Size = new System.Drawing.Size(144, 13);
+            this.label_visoAntPop.TabIndex = 17;
+            this.label_visoAntPop.Text = "Viso pajamų ,,ant popieriaus\"";
+            this.label_visoAntPop.Visible = false;
+            this.label_visoAntPop.Click += new System.EventHandler(this.label_visoAntPop_Click);
             // 
-            // label17
+            // label_autAntPop
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 300);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(144, 13);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Viso pajamų ,,ant popieriaus\"";
+            this.label_autAntPop.AutoSize = true;
+            this.label_autAntPop.Location = new System.Drawing.Point(16, 273);
+            this.label_autAntPop.Name = "label_autAntPop";
+            this.label_autAntPop.Size = new System.Drawing.Size(222, 13);
+            this.label_autAntPop.TabIndex = 16;
+            this.label_autAntPop.Text = "Pajamos už autorines sutartis \"ant popieriaus\"";
+            this.label_autAntPop.Visible = false;
+            this.label_autAntPop.Click += new System.EventHandler(this.label_autAntPop_Click);
             // 
-            // label16
+            // textBox_isvedaDarbMokTab2
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(16, 273);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(222, 13);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "Pajamos už autorines sutartis \"ant popieriaus\"";
+            this.textBox_isvedaDarbMokTab2.Location = new System.Drawing.Point(304, 247);
+            this.textBox_isvedaDarbMokTab2.Name = "textBox_isvedaDarbMokTab2";
+            this.textBox_isvedaDarbMokTab2.Size = new System.Drawing.Size(100, 20);
+            this.textBox_isvedaDarbMokTab2.TabIndex = 15;
             // 
-            // textBox16
+            // textBox_isvedaSveikatos
             // 
-            this.textBox16.Location = new System.Drawing.Point(304, 247);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 20);
-            this.textBox16.TabIndex = 15;
+            this.textBox_isvedaSveikatos.Location = new System.Drawing.Point(128, 215);
+            this.textBox_isvedaSveikatos.Name = "textBox_isvedaSveikatos";
+            this.textBox_isvedaSveikatos.Size = new System.Drawing.Size(100, 20);
+            this.textBox_isvedaSveikatos.TabIndex = 14;
             // 
-            // textBox15
+            // textBox_isvedaSodros
             // 
-            this.textBox15.Location = new System.Drawing.Point(128, 215);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 14;
+            this.textBox_isvedaSodros.Location = new System.Drawing.Point(111, 192);
+            this.textBox_isvedaSodros.Name = "textBox_isvedaSodros";
+            this.textBox_isvedaSodros.Size = new System.Drawing.Size(100, 20);
+            this.textBox_isvedaSodros.TabIndex = 13;
             // 
-            // textBox14
+            // textBox_isvedaPajamuMok
             // 
-            this.textBox14.Location = new System.Drawing.Point(111, 192);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 13;
+            this.textBox_isvedaPajamuMok.Location = new System.Drawing.Point(62, 166);
+            this.textBox_isvedaPajamuMok.Name = "textBox_isvedaPajamuMok";
+            this.textBox_isvedaPajamuMok.Size = new System.Drawing.Size(100, 20);
+            this.textBox_isvedaPajamuMok.TabIndex = 12;
             // 
-            // textBox13
+            // textBox_isvedaAntPop
             // 
-            this.textBox13.Location = new System.Drawing.Point(111, 166);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 12;
+            this.textBox_isvedaAntPop.Location = new System.Drawing.Point(136, 142);
+            this.textBox_isvedaAntPop.Name = "textBox_isvedaAntPop";
+            this.textBox_isvedaAntPop.Size = new System.Drawing.Size(100, 20);
+            this.textBox_isvedaAntPop.TabIndex = 11;
             // 
-            // textBox12
+            // button_skaiciuotiTab2
             // 
-            this.textBox12.Location = new System.Drawing.Point(136, 142);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 11;
+            this.button_skaiciuotiTab2.Location = new System.Drawing.Point(6, 99);
+            this.button_skaiciuotiTab2.Name = "button_skaiciuotiTab2";
+            this.button_skaiciuotiTab2.Size = new System.Drawing.Size(75, 23);
+            this.button_skaiciuotiTab2.TabIndex = 10;
+            this.button_skaiciuotiTab2.Text = "Skaičiuoti";
+            this.button_skaiciuotiTab2.UseVisualStyleBackColor = true;
+            this.button_skaiciuotiTab2.Click += new System.EventHandler(this.button_skaiciuotiTab2_Click);
             // 
-            // button2
+            // textBox_ivestiAutIRankas
             // 
-            this.button2.Location = new System.Drawing.Point(6, 99);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Skaičiuoti";
-            this.button2.UseVisualStyleBackColor = true;
+            this.textBox_ivestiAutIRankas.Location = new System.Drawing.Point(267, 70);
+            this.textBox_ivestiAutIRankas.Name = "textBox_ivestiAutIRankas";
+            this.textBox_ivestiAutIRankas.Size = new System.Drawing.Size(100, 20);
+            this.textBox_ivestiAutIRankas.TabIndex = 9;
+            this.textBox_ivestiAutIRankas.Visible = false;
+            this.textBox_ivestiAutIRankas.TextChanged += new System.EventHandler(this.textBox_ivestiAutIRankas_TextChanged);
             // 
-            // textBox11
+            // checkBox_autonominesTab2
             // 
-            this.textBox11.Location = new System.Drawing.Point(10, 73);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 9;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(10, 50);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(247, 17);
-            this.checkBox2.TabIndex = 7;
-            this.checkBox2.Text = "gaunu pajamas iš autorinių sutarčių \"į rankas\"?";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox_autonominesTab2.AutoSize = true;
+            this.checkBox_autonominesTab2.Location = new System.Drawing.Point(10, 50);
+            this.checkBox_autonominesTab2.Name = "checkBox_autonominesTab2";
+            this.checkBox_autonominesTab2.Size = new System.Drawing.Size(247, 17);
+            this.checkBox_autonominesTab2.TabIndex = 7;
+            this.checkBox_autonominesTab2.Text = "gaunu pajamas iš autorinių sutarčių \"į rankas\"?";
+            this.checkBox_autonominesTab2.UseVisualStyleBackColor = true;
+            this.checkBox_autonominesTab2.CheckedChanged += new System.EventHandler(this.checkBox_autonominesTab2_CheckedChanged);
             // 
             // label15
             // 
@@ -494,9 +499,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(10, 169);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 13);
+            this.label12.Size = new System.Drawing.Size(31, 13);
             this.label12.TabIndex = 3;
-            this.label12.Text = "Pajamų mokestis";
+            this.label12.Text = "GMP";
             // 
             // label11
             // 
@@ -507,12 +512,12 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "Alga ,,ant popieriaus\"";
             // 
-            // textBox10
+            // textBox_ivestiIRankas
             // 
-            this.textBox10.Location = new System.Drawing.Point(10, 23);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 1;
+            this.textBox_ivestiIRankas.Location = new System.Drawing.Point(10, 23);
+            this.textBox_ivestiIRankas.Name = "textBox_ivestiIRankas";
+            this.textBox_ivestiIRankas.Size = new System.Drawing.Size(100, 20);
+            this.textBox_ivestiIRankas.TabIndex = 1;
             // 
             // label10
             // 
@@ -544,8 +549,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox_ivestiAntPopieriaus;
+        private System.Windows.Forms.Button button_isvalytiTab1;
         private System.Windows.Forms.TextBox textBox_isvedaVisoIRankas;
         private System.Windows.Forms.Label label_VisoTab1;
         private System.Windows.Forms.TextBox textBox_isvedaAutoriniuAlga;
@@ -565,29 +569,29 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_skaiciuotiTab1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button_isvalytiTab1;
-        private System.Windows.Forms.Button button_koreguotiTab1;
+        private System.Windows.Forms.TextBox textBox_ivestiAntPopieriaus;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label_autSutTab2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TextBox textBox_isvedaVisoTab2;
+        private System.Windows.Forms.TextBox textBox_isvedaAutAntPop;
+        private System.Windows.Forms.Label label_visoAntPop;
+        private System.Windows.Forms.Label label_autAntPop;
+        private System.Windows.Forms.TextBox textBox_isvedaDarbMokTab2;
+        private System.Windows.Forms.TextBox textBox_isvedaSveikatos;
+        private System.Windows.Forms.TextBox textBox_isvedaSodros;
+        private System.Windows.Forms.TextBox textBox_isvedaPajamuMok;
+        private System.Windows.Forms.TextBox textBox_isvedaAntPop;
+        private System.Windows.Forms.Button button_skaiciuotiTab2;
+        private System.Windows.Forms.TextBox textBox_ivestiAutIRankas;
+        private System.Windows.Forms.CheckBox checkBox_autonominesTab2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox_ivestiIRankas;
+        private System.Windows.Forms.Label label10;
     }
 }
 
