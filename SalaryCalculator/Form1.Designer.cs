@@ -177,6 +177,7 @@
             this.textBox_ivestiAutorinesPopieriuje.TabIndex = 15;
             this.textBox_ivestiAutorinesPopieriuje.Visible = false;
             this.textBox_ivestiAutorinesPopieriuje.TextChanged += new System.EventHandler(this.textBox_ivestiAutorinesPopieriuje_TextChanged);
+            this.textBox_ivestiAutorinesPopieriuje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ivestiAutorinesPopieriuje_KeyPress);
             // 
             // label_autPajamosTab1
             // 
@@ -197,6 +198,7 @@
             this.textBox_procNuoAutoriniu.TabIndex = 13;
             this.textBox_procNuoAutoriniu.Visible = false;
             this.textBox_procNuoAutoriniu.TextChanged += new System.EventHandler(this.textBox_procNuoAutoriniu_TextChanged);
+            this.textBox_procNuoAutoriniu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_procNuoAutoriniu_KeyPress);
             // 
             // label_procNuoAut
             // 
@@ -309,6 +311,7 @@
             this.textBox_ivestiAntPopieriaus.Name = "textBox_ivestiAntPopieriaus";
             this.textBox_ivestiAntPopieriaus.Size = new System.Drawing.Size(239, 20);
             this.textBox_ivestiAntPopieriaus.TabIndex = 0;
+            this.textBox_ivestiAntPopieriaus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ivestiAntPopieriaus_KeyPress);
             // 
             // tabPage2
             // 
@@ -455,6 +458,7 @@
             this.textBox_ivestiAutIRankas.TabIndex = 9;
             this.textBox_ivestiAutIRankas.Visible = false;
             this.textBox_ivestiAutIRankas.TextChanged += new System.EventHandler(this.textBox_ivestiAutIRankas_TextChanged);
+            this.textBox_ivestiAutIRankas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ivestiAutIRankas_KeyPress);
             // 
             // checkBox_autonominesTab2
             // 
@@ -518,6 +522,7 @@
             this.textBox_ivestiIRankas.Name = "textBox_ivestiIRankas";
             this.textBox_ivestiIRankas.Size = new System.Drawing.Size(100, 20);
             this.textBox_ivestiIRankas.TabIndex = 1;
+            this.textBox_ivestiIRankas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ivestiIRankas_KeyPress);
             // 
             // label10
             // 

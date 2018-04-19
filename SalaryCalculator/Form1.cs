@@ -243,6 +243,29 @@ namespace SalaryCalculator
             }
         }
 
+        private void textBox_ivestiAntPopieriaus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            AllowOnlyNumbers(sender, e);
+        }
 
+        private void textBox_ivestiAutorinesPopieriuje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            AllowOnlyNumbers(sender, e);
+        }
+
+        private void textBox_procNuoAutoriniu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            AllowOnlyNumbers(sender, e);
+        }
+
+        private void textBox_ivestiIRankas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            AllowOnlyNumbers(sender, e);
+        }
+
+        private void textBox_ivestiAutIRankas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            AllowOnlyNumbers(sender, e);
+        }
     }
 }
