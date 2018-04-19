@@ -88,15 +88,6 @@ namespace SalaryCalculator
         }
         #endregion
 
-        private void ApskaiciuotiAutorines ()
-        {
-            autorinesPajamos = float.Parse(textBox_ivestiAutorinesPopieriuje.Text);
-            procentasNuoAut = float.Parse(textBox_procNuoAutoriniu.Text);
-            autUzdarbis = autorinesPajamos - (autorinesPajamos * (procentasNuoAut / 100));
-           
-            textBox_isvedaAutoriniuAlga.Text = autUzdarbis.ToString("0.00");
-        }
-
         private void button_isvalytiTab1_Click(object sender, EventArgs e)
         {
             Utilities.ResetAllControls(tabControl1.SelectedTab);
@@ -180,6 +171,15 @@ namespace SalaryCalculator
         private void Psd (float atlyginimasPopieriuje)
         {
             sveikatai = atlyginimasPopieriuje * PSD;
+        }
+
+        private void ApskaiciuotiAutorines()
+        {
+            autorinesPajamos = float.Parse(textBox_ivestiAutorinesPopieriuje.Text);
+            procentasNuoAut = float.Parse(textBox_procNuoAutoriniu.Text);
+            autUzdarbis = autorinesPajamos - (autorinesPajamos * (procentasNuoAut / 100));
+
+            textBox_isvedaAutoriniuAlga.Text = autUzdarbis.ToString("0.00");
         }
 
         private void AutorinesPopieriuje()
