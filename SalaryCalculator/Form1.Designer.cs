@@ -136,7 +136,6 @@
             this.textBox_isvedaVisoIRankas.Size = new System.Drawing.Size(100, 20);
             this.textBox_isvedaVisoIRankas.TabIndex = 19;
             this.textBox_isvedaVisoIRankas.Visible = false;
-            this.textBox_isvedaVisoIRankas.TextChanged += new System.EventHandler(this.textBox_isvedaVisoIRankas_TextChanged);
             // 
             // label_VisoTab1
             // 
@@ -147,7 +146,6 @@
             this.label_VisoTab1.TabIndex = 18;
             this.label_VisoTab1.Text = "Viso (atlyginismas į rankas ir uždarbis iš autorinių sutarčių)";
             this.label_VisoTab1.Visible = false;
-            this.label_VisoTab1.Click += new System.EventHandler(this.label_VisoTab1_Click);
             // 
             // textBox_isvedaAutoriniuAlga
             // 
@@ -156,7 +154,6 @@
             this.textBox_isvedaAutoriniuAlga.Size = new System.Drawing.Size(100, 20);
             this.textBox_isvedaAutoriniuAlga.TabIndex = 17;
             this.textBox_isvedaAutoriniuAlga.Visible = false;
-            this.textBox_isvedaAutoriniuAlga.TextChanged += new System.EventHandler(this.textBox_isvedaAutoriniuAlga_TextChanged);
             // 
             // label_autUzdarbis
             // 
@@ -167,7 +164,6 @@
             this.label_autUzdarbis.TabIndex = 16;
             this.label_autUzdarbis.Text = "Autorinių sutarčių uždarbis";
             this.label_autUzdarbis.Visible = false;
-            this.label_autUzdarbis.Click += new System.EventHandler(this.label_autUzdarbis_Click);
             // 
             // textBox_ivestiAutorinesPopieriuje
             // 
@@ -177,7 +173,6 @@
             this.textBox_ivestiAutorinesPopieriuje.TabIndex = 15;
             this.textBox_ivestiAutorinesPopieriuje.Text = "0";
             this.textBox_ivestiAutorinesPopieriuje.Visible = false;
-            this.textBox_ivestiAutorinesPopieriuje.TextChanged += new System.EventHandler(this.textBox_ivestiAutorinesPopieriuje_TextChanged);
             this.textBox_ivestiAutorinesPopieriuje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ivestiAutorinesPopieriuje_KeyPress);
             // 
             // label_autPajamosTab1
@@ -189,7 +184,6 @@
             this.label_autPajamosTab1.TabIndex = 14;
             this.label_autPajamosTab1.Text = "Jūsų autorinių sutarčių pajamos:";
             this.label_autPajamosTab1.Visible = false;
-            this.label_autPajamosTab1.Click += new System.EventHandler(this.label_autPajamosTab1_Click);
             // 
             // textBox_procNuoAutoriniu
             // 
@@ -199,7 +193,6 @@
             this.textBox_procNuoAutoriniu.TabIndex = 13;
             this.textBox_procNuoAutoriniu.Text = "0";
             this.textBox_procNuoAutoriniu.Visible = false;
-            this.textBox_procNuoAutoriniu.TextChanged += new System.EventHandler(this.textBox_procNuoAutoriniu_TextChanged);
             this.textBox_procNuoAutoriniu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_procNuoAutoriniu_KeyPress);
             // 
             // label_procNuoAut
@@ -211,7 +204,6 @@
             this.label_procNuoAut.TabIndex = 12;
             this.label_procNuoAut.Text = "Koks procentas nuskaičiuojamas nuo autorinių sutarčių pajamų?";
             this.label_procNuoAut.Visible = false;
-            this.label_procNuoAut.Click += new System.EventHandler(this.label_procNuoAut_Click);
             // 
             // textBox_isvedaDarbdaviui
             // 
@@ -356,7 +348,6 @@
             this.label_autSutTab2.TabIndex = 22;
             this.label_autSutTab2.Text = "Įveskite pajamas iš autorinių sutarčių ,,į rankas\"";
             this.label_autSutTab2.Visible = false;
-            this.label_autSutTab2.Click += new System.EventHandler(this.label_autSutTab2_Click);
             // 
             // button4
             // 
@@ -375,7 +366,6 @@
             this.textBox_isvedaVisoTab2.Size = new System.Drawing.Size(100, 20);
             this.textBox_isvedaVisoTab2.TabIndex = 19;
             this.textBox_isvedaVisoTab2.Visible = false;
-            this.textBox_isvedaVisoTab2.TextChanged += new System.EventHandler(this.textBox_isvedaVisoTab2_TextChanged);
             // 
             // textBox_isvedaAutAntPop
             // 
@@ -384,7 +374,6 @@
             this.textBox_isvedaAutAntPop.Size = new System.Drawing.Size(100, 20);
             this.textBox_isvedaAutAntPop.TabIndex = 18;
             this.textBox_isvedaAutAntPop.Visible = false;
-            this.textBox_isvedaAutAntPop.TextChanged += new System.EventHandler(this.textBox_isvedaAutAntPop_TextChanged);
             // 
             // label_visoAntPop
             // 
@@ -395,7 +384,6 @@
             this.label_visoAntPop.TabIndex = 17;
             this.label_visoAntPop.Text = "Viso pajamų ,,ant popieriaus\"";
             this.label_visoAntPop.Visible = false;
-            this.label_visoAntPop.Click += new System.EventHandler(this.label_visoAntPop_Click);
             // 
             // label_autAntPop
             // 
@@ -406,7 +394,6 @@
             this.label_autAntPop.TabIndex = 16;
             this.label_autAntPop.Text = "Pajamos už autorines sutartis \"ant popieriaus\"";
             this.label_autAntPop.Visible = false;
-            this.label_autAntPop.Click += new System.EventHandler(this.label_autAntPop_Click);
             // 
             // textBox_isvedaDarbMokTab2
             // 
@@ -461,7 +448,6 @@
             this.textBox_ivestiAutIRankas.TabIndex = 9;
             this.textBox_ivestiAutIRankas.Text = "0";
             this.textBox_ivestiAutIRankas.Visible = false;
-            this.textBox_ivestiAutIRankas.TextChanged += new System.EventHandler(this.textBox_ivestiAutIRankas_TextChanged);
             this.textBox_ivestiAutIRankas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ivestiAutIRankas_KeyPress);
             // 
             // checkBox_autonominesTab2

@@ -19,23 +19,29 @@ namespace SalaryCalculator
         private const float GARANTINIS_FONDAS = 0.002f;
         private const float ILGALAIKIO_ISMOKOS = 0.005f;
         private const float DARBDAVIO_SODRA = 0.2748f;
+        
+        float atlyginimasPopieriuje;
+        float atlyginimasIRankas;
+        float autorinesPajamos;
+        float procentasNuoAut;
+        float autUzdarbis;
+        float visoTab1;
+        float gmp;
+        float sodrai;
+        float sveikatai;
+        float atlyginimasRankose;
+        float algaPopieriuje;
+        float darbdavysMoka;
+        float autIRankas;
+        float autPopieriuje;
+        float visoTab2;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        float atlyginimasPopieriuje;
-        float gmpTab1;
-        float sodraiTab1;
-        float sveikataiTab1;
-        float atlyginimasIRankas;
-        float darboVietosKaina;
-        float autorinesPajamos;
-        float procentasNuoAut;
-        float autUzdarbis;
-        float visoTab1;
-
+        //Tab1
         private void button_skaiciuotiTab1_Click(object sender, EventArgs e)
         {
             AtlyginimasIRankas();
@@ -45,17 +51,15 @@ namespace SalaryCalculator
         {
             atlyginimasPopieriuje = float.Parse(textBox_ivestiAntPopieriaus.Text);
 
-            gmpTab1 = (atlyginimasPopieriuje - (380 - (0.5f * (atlyginimasPopieriuje - MINIMALI_ALGA)))) * GMP;
+            Gmp(atlyginimasPopieriuje);
 
-            sodraiTab1 = atlyginimasPopieriuje * SODRA;
+            Sodrai(atlyginimasPopieriuje);
 
-            sveikataiTab1 = atlyginimasPopieriuje * PSD;
+            Psd(atlyginimasPopieriuje);
 
-            atlyginimasIRankas = atlyginimasPopieriuje - gmpTab1 - sodraiTab1 - sveikataiTab1;
+            atlyginimasIRankas = atlyginimasPopieriuje - gmp - sodrai - sveikatai;
 
-            darboVietosKaina = atlyginimasPopieriuje + (atlyginimasPopieriuje * DARBDAVIO_SODRA) +
-                (atlyginimasPopieriuje * SODRA) + (atlyginimasPopieriuje * GARANTINIS_FONDAS) +
-                (atlyginimasPopieriuje * ILGALAIKIO_ISMOKOS);
+            DarbdavysMoka(atlyginimasPopieriuje);
 
             if (checkBox_autorinesSutartysTab1.CheckState == CheckState.Checked)
             {
@@ -65,11 +69,12 @@ namespace SalaryCalculator
             }
 
             textBox_isvedaIRankas.Text = atlyginimasIRankas.ToString("0.00");
-            textBox_isvedaSodrai.Text = sodraiTab1.ToString("0.00");
-            textBox_isvedaSveikatai.Text = sveikataiTab1.ToString("0.00");
-            textBox_isvedaDarbdaviui.Text = darboVietosKaina.ToString("0.00");
+            textBox_isvedaSodrai.Text = sodrai.ToString("0.00");
+            textBox_isvedaSveikatai.Text = sveikatai.ToString("0.00");
+            textBox_isvedaDarbdaviui.Text = darbdavysMoka.ToString("0.00");
         }
 
+        #region MATOMUMAS
         private void checkBox_autorinesSutartysTab1_CheckedChanged(object sender, EventArgs e)
         {
             label_autPajamosTab1.Visible = checkBox_autorinesSutartysTab1.Checked;
@@ -81,6 +86,7 @@ namespace SalaryCalculator
             label_VisoTab1.Visible = checkBox_autorinesSutartysTab1.Checked;
             textBox_isvedaVisoIRankas.Visible = checkBox_autorinesSutartysTab1.Checked;            
         }
+        #endregion
 
         private void ApskaiciuotiAutorines ()
         {
@@ -91,46 +97,12 @@ namespace SalaryCalculator
             textBox_isvedaAutoriniuAlga.Text = autUzdarbis.ToString("0.00");
         }
 
-        private void textBox_ivestiAutorinesPopieriuje_TextChanged(object sender, EventArgs e) => 
-            textBox_ivestiAutorinesPopieriuje.Visible = checkBox_autorinesSutartysTab1.Checked;
-            
-        private void label_autPajamosTab1_Click(object sender, EventArgs e) => 
-            label_autPajamosTab1.Visible = checkBox_autorinesSutartysTab1.Checked;
-
-        private void label_procNuoAut_Click(object sender, EventArgs e) =>
-            label_procNuoAut.Visible = checkBox_autorinesSutartysTab1.Checked;
-
-        private void textBox_procNuoAutoriniu_TextChanged(object sender, EventArgs e) => 
-            textBox_procNuoAutoriniu.Visible = checkBox_autorinesSutartysTab1.Checked;
-           
-        private void label_autUzdarbis_Click(object sender, EventArgs e) =>
-            label_autUzdarbis.Visible = checkBox_autorinesSutartysTab1.Checked;
-
-        private void textBox_isvedaAutoriniuAlga_TextChanged(object sender, EventArgs e) =>
-            textBox_isvedaAutoriniuAlga.Visible = checkBox_autorinesSutartysTab1.Checked;
-
-        private void label_VisoTab1_Click(object sender, EventArgs e) =>
-            label_VisoTab1.Visible = checkBox_autorinesSutartysTab1.Checked;
-
-        private void textBox_isvedaVisoIRankas_TextChanged(object sender, EventArgs e) =>
-            textBox_isvedaVisoIRankas.Visible = checkBox_autorinesSutartysTab1.Checked;
-
         private void button_isvalytiTab1_Click(object sender, EventArgs e)
         {
             Utilities.ResetAllControls(tabControl1.SelectedTab);
         }
 
         //Tab2
-        float atlyginimasRankose;
-        float algaPopieriuje;
-        float gmpTab2;
-        float sveikataiTab2;
-        float sodraiTab2;
-        float darbdavysmoka;
-        float autIRankas;
-        float autPopieriuje;
-        float visoTab2;
-
         private void button_skaiciuotiTab2_Click(object sender, EventArgs e)
         {
             AtlyginimasPopieriuje();
@@ -149,15 +121,13 @@ namespace SalaryCalculator
                 algaPopieriuje = 1.45985f * (atlyginimasRankose - 87);
             }
 
-            gmpTab2 = (algaPopieriuje - (380 - (0.5f * (algaPopieriuje - MINIMALI_ALGA)))) * GMP;
+            Gmp(algaPopieriuje);
 
-            sodraiTab2 = algaPopieriuje * SODRA;
+            Sodrai(algaPopieriuje);
 
-            sveikataiTab2 = algaPopieriuje * PSD;
+            Psd(algaPopieriuje);
 
-            darbdavysmoka = algaPopieriuje + (algaPopieriuje * DARBDAVIO_SODRA) +
-                (algaPopieriuje * SODRA) + (algaPopieriuje * GARANTINIS_FONDAS) +
-                (algaPopieriuje * ILGALAIKIO_ISMOKOS);
+            DarbdavysMoka(algaPopieriuje);
 
             if (checkBox_autonominesTab2.CheckState == CheckState.Checked)
             {
@@ -167,12 +137,13 @@ namespace SalaryCalculator
             }
 
             textBox_isvedaAntPop.Text = algaPopieriuje.ToString("0.00");
-            textBox_isvedaPajamuMok.Text = gmpTab2.ToString("0.00");
-            textBox_isvedaSodros.Text = sodraiTab2.ToString("0.00");
-            textBox_isvedaSveikatos.Text = sveikataiTab2.ToString("0.00");
-            textBox_isvedaDarbMokTab2.Text = darbdavysmoka.ToString("0.00");
+            textBox_isvedaPajamuMok.Text = gmp.ToString("0.00");
+            textBox_isvedaSodros.Text = sodrai.ToString("0.00");
+            textBox_isvedaSveikatos.Text = sveikatai.ToString("0.00");
+            textBox_isvedaDarbMokTab2.Text = darbdavysMoka.ToString("0.00");
         }
 
+        #region MATOMUMAS
         private void checkBox_autonominesTab2_CheckedChanged(object sender, EventArgs e)
         {
             label_autSutTab2.Visible = checkBox_autonominesTab2.Checked;
@@ -182,36 +153,41 @@ namespace SalaryCalculator
             label_visoAntPop.Visible = checkBox_autonominesTab2.Checked;
             textBox_isvedaVisoTab2.Visible = checkBox_autonominesTab2.Checked;
         }
+        #endregion
 
-        private void AutorinesPopieriuje ()
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Utilities.ResetAllControls(tabControl1.SelectedTab);
+        }
+
+        //Bendriniai skaičiavimai
+        private void DarbdavysMoka(float algaPopieriuje)
+        {
+            darbdavysMoka = algaPopieriuje + (algaPopieriuje * DARBDAVIO_SODRA) + (algaPopieriuje * SODRA)
+                + (algaPopieriuje * GARANTINIS_FONDAS) + (algaPopieriuje * ILGALAIKIO_ISMOKOS);
+        }
+
+        private void Gmp (float atlyginimasPopieriuje)
+        {
+            gmp = (atlyginimasPopieriuje - (380 - (0.5f * (atlyginimasPopieriuje - MINIMALI_ALGA)))) * GMP;
+        }
+
+        private void Sodrai (float atlyginimasPopieriuje)
+        {
+            sodrai = atlyginimasPopieriuje * SODRA;
+        }
+
+        private void Psd (float atlyginimasPopieriuje)
+        {
+            sveikatai = atlyginimasPopieriuje * PSD;
+        }
+
+        private void AutorinesPopieriuje()
         {
             autIRankas = float.Parse(textBox_ivestiAutIRankas.Text);
             autPopieriuje = autIRankas / 0.621f;
 
             textBox_isvedaAutAntPop.Text = autPopieriuje.ToString("0.00");
-        }
-
-        private void label_autSutTab2_Click(object sender, EventArgs e) =>
-            label_autSutTab2.Visible = checkBox_autonominesTab2.Checked;
-
-        private void textBox_ivestiAutIRankas_TextChanged(object sender, EventArgs e) =>
-            textBox_ivestiAutIRankas.Visible = checkBox_autonominesTab2.Checked;
-
-        private void label_autAntPop_Click(object sender, EventArgs e) =>
-            label_autAntPop.Visible = checkBox_autonominesTab2.Checked;
-
-        private void textBox_isvedaAutAntPop_TextChanged(object sender, EventArgs e) =>
-            textBox_isvedaAutAntPop.Visible = checkBox_autonominesTab2.Checked;
-
-        private void label_visoAntPop_Click(object sender, EventArgs e) =>
-            label_visoAntPop.Visible = checkBox_autonominesTab2.Checked;
-
-        private void textBox_isvedaVisoTab2_TextChanged(object sender, EventArgs e) =>
-            textBox_isvedaVisoTab2.Visible = checkBox_autonominesTab2.Checked;
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Utilities.ResetAllControls(tabControl1.SelectedTab);
         }
 
         //Reset Button
@@ -236,6 +212,7 @@ namespace SalaryCalculator
             }
         }
 
+        #region TEXT_INPUT
         //Avoid other input except for numbers
         private void AllowOnlyNumbers(object sender, KeyPressEventArgs e)
         {
@@ -274,5 +251,6 @@ namespace SalaryCalculator
         {
             AllowOnlyNumbers(sender, e);
         }
+        #endregion
     }
 }
