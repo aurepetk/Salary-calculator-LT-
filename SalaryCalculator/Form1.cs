@@ -12,6 +12,14 @@ namespace SalaryCalculator
 {
     public partial class Form1 : Form
     {
+        private const float MINIMALI_ALGA = 400;
+        private const float SODRA = 0.03f;
+        private const float PSD = 0.06f;
+        private const float GMP = 0.15f;
+        private const float GARANTINIS_FONDAS = 0.002f;
+        private const float ILGALAIKIO_ISMOKOS = 0.005f;
+        private const float DARBDAVIO_SODRA = 0.2748f;
+
         public Form1()
         {
             InitializeComponent();
@@ -37,18 +45,17 @@ namespace SalaryCalculator
         {
             atlyginimasPopieriuje = float.Parse(textBox_ivestiAntPopieriaus.Text);
 
-            gmpTab1 = (atlyginimasPopieriuje - (380 - (0.5f * (atlyginimasPopieriuje - 400))))
-                * 0.15f;
+            gmpTab1 = (atlyginimasPopieriuje - (380 - (0.5f * (atlyginimasPopieriuje - MINIMALI_ALGA)))) * GMP;
 
-            sodraiTab1 = atlyginimasPopieriuje * 0.03f;
+            sodraiTab1 = atlyginimasPopieriuje * SODRA;
 
-            sveikataiTab1 = atlyginimasPopieriuje * 0.06f;
+            sveikataiTab1 = atlyginimasPopieriuje * PSD;
 
             atlyginimasIRankas = atlyginimasPopieriuje - gmpTab1 - sodraiTab1 - sveikataiTab1;
 
-            darboVietosKaina = atlyginimasPopieriuje + (atlyginimasPopieriuje * 0.2748f) +
-                (atlyginimasPopieriuje * 0.03f) + (atlyginimasPopieriuje * 0.002f) +
-                (atlyginimasPopieriuje * 0.005f);
+            darboVietosKaina = atlyginimasPopieriuje + (atlyginimasPopieriuje * DARBDAVIO_SODRA) +
+                (atlyginimasPopieriuje * SODRA) + (atlyginimasPopieriuje * GARANTINIS_FONDAS) +
+                (atlyginimasPopieriuje * ILGALAIKIO_ISMOKOS);
 
             if (checkBox_autorinesSutartysTab1.CheckState == CheckState.Checked)
             {
@@ -142,15 +149,15 @@ namespace SalaryCalculator
                 algaPopieriuje = 1.45985f * (atlyginimasRankose - 87);
             }
 
-            gmpTab2 = (algaPopieriuje - (380 - (0.5f * (algaPopieriuje - 400)))) * 0.15f;
+            gmpTab2 = (algaPopieriuje - (380 - (0.5f * (algaPopieriuje - MINIMALI_ALGA)))) * GMP;
 
-            sodraiTab2 = algaPopieriuje * 0.03f;
+            sodraiTab2 = algaPopieriuje * SODRA;
 
-            sveikataiTab2 = algaPopieriuje * 0.06f;
+            sveikataiTab2 = algaPopieriuje * PSD;
 
-            darbdavysmoka = algaPopieriuje + (algaPopieriuje * 0.2748f) +
-                (algaPopieriuje * 0.03f) + (algaPopieriuje * 0.002f) +
-                (algaPopieriuje * 0.005f);
+            darbdavysmoka = algaPopieriuje + (algaPopieriuje * DARBDAVIO_SODRA) +
+                (algaPopieriuje * SODRA) + (algaPopieriuje * GARANTINIS_FONDAS) +
+                (algaPopieriuje * ILGALAIKIO_ISMOKOS);
 
             if (checkBox_autonominesTab2.CheckState == CheckState.Checked)
             {
@@ -229,7 +236,7 @@ namespace SalaryCalculator
             }
         }
 
-        //Avoid other input than numbers
+        //Avoid other input except for numbers
         private void AllowOnlyNumbers(object sender, KeyPressEventArgs e)
         {
             // Verify that the pressed key isn't CTRL or any non-numeric digit
