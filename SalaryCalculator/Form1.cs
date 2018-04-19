@@ -41,6 +41,7 @@ namespace SalaryCalculator
             InitializeComponent();
         }
 
+        #region TAB1
         //Tab1
         private void button_skaiciuotiTab1_Click(object sender, EventArgs e)
         {
@@ -61,6 +62,7 @@ namespace SalaryCalculator
 
             DarbdavysMoka(atlyginimasPopieriuje);
 
+            //Apskaičiuoja autorinių sutarčių pajamas, jei pažymimas CheckBox
             if (checkBox_autorinesSutartysTab1.CheckState == CheckState.Checked)
             {
                 ApskaiciuotiAutorines();
@@ -74,7 +76,7 @@ namespace SalaryCalculator
             textBox_isvedaDarbdaviui.Text = darbdavysMoka.ToString("0.00");
         }
 
-        #region MATOMUMAS
+        #region VISIBILITY
         private void checkBox_autorinesSutartysTab1_CheckedChanged(object sender, EventArgs e)
         {
             label_autPajamosTab1.Visible = checkBox_autorinesSutartysTab1.Checked;
@@ -92,7 +94,9 @@ namespace SalaryCalculator
         {
             Utilities.ResetAllControls(tabControl1.SelectedTab);
         }
+        #endregion
 
+        #region TAB2
         //Tab2
         private void button_skaiciuotiTab2_Click(object sender, EventArgs e)
         {
@@ -103,6 +107,10 @@ namespace SalaryCalculator
         {
             atlyginimasRankose = float.Parse(textBox_ivestiIRankas.Text);
 
+            /*
+               Grubus paskaičiavimas atlyginimo ant popieriaus iš atlyginimo į rankas
+               Susidariau formule ir pasinaudojau sprendimu: http://m.wolframalpha.com/input/?i=y+-+%28y+-+%28380+-+0.5+*+%28sqrt%28%28y+-+400%29%5E2%29%29%29%29+*0.15+-+y*0.06+-+y*0.03+%3D+x
+            */
             if (atlyginimasRankose <= 361)
             {
                 algaPopieriuje = 1.1976f * (atlyginimasRankose - 27);  
@@ -120,6 +128,7 @@ namespace SalaryCalculator
 
             DarbdavysMoka(algaPopieriuje);
 
+            //Apskaičiuoja autorinių sutarčių pajamas, jei pažymimas CheckBox
             if (checkBox_autonominesTab2.CheckState == CheckState.Checked)
             {
                 AutorinesPopieriuje();
@@ -134,7 +143,7 @@ namespace SalaryCalculator
             textBox_isvedaDarbMokTab2.Text = darbdavysMoka.ToString("0.00");
         }
 
-        #region MATOMUMAS
+        #region VISIBILITY
         private void checkBox_autonominesTab2_CheckedChanged(object sender, EventArgs e)
         {
             label_autSutTab2.Visible = checkBox_autonominesTab2.Checked;
@@ -150,7 +159,9 @@ namespace SalaryCalculator
         {
             Utilities.ResetAllControls(tabControl1.SelectedTab);
         }
+        #endregion
 
+        #region MATH
         //Bendriniai skaičiavimai
         private void DarbdavysMoka(float algaPopieriuje)
         {
@@ -189,7 +200,9 @@ namespace SalaryCalculator
 
             textBox_isvedaAutAntPop.Text = autPopieriuje.ToString("0.00");
         }
+        #endregion
 
+        #region RESET_BUTTON
         //Reset Button
         public class Utilities
         {
@@ -211,6 +224,7 @@ namespace SalaryCalculator
                 }
             }
         }
+        #endregion
 
         #region TEXT_INPUT
         //Avoid other input except for numbers
