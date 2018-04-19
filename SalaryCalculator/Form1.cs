@@ -54,13 +54,13 @@ namespace SalaryCalculator
             {
                 ApskaiciuotiAutorines();
                 visoTab1 = atlyginimasIRankas + autUzdarbis;
-                textBox_isvedaVisoIRankas.Text = visoTab1.ToString();
+                textBox_isvedaVisoIRankas.Text = visoTab1.ToString("0.00");
             }
 
-            textBox_isvedaIRankas.Text = atlyginimasIRankas.ToString();
-            textBox_isvedaSodrai.Text = sodraiTab1.ToString();
-            textBox_isvedaSveikatai.Text = sveikataiTab1.ToString();
-            textBox_isvedaDarbdaviui.Text = darboVietosKaina.ToString();
+            textBox_isvedaIRankas.Text = atlyginimasIRankas.ToString("0.00");
+            textBox_isvedaSodrai.Text = sodraiTab1.ToString("0.00");
+            textBox_isvedaSveikatai.Text = sveikataiTab1.ToString("0.00");
+            textBox_isvedaDarbdaviui.Text = darboVietosKaina.ToString("0.00");
         }
 
         private void checkBox_autorinesSutartysTab1_CheckedChanged(object sender, EventArgs e)
@@ -75,15 +75,13 @@ namespace SalaryCalculator
             textBox_isvedaVisoIRankas.Visible = checkBox_autorinesSutartysTab1.Checked;            
         }
 
-        private float ApskaiciuotiAutorines ()
+        private void ApskaiciuotiAutorines ()
         {
             autorinesPajamos = float.Parse(textBox_ivestiAutorinesPopieriuje.Text);
             procentasNuoAut = float.Parse(textBox_procNuoAutoriniu.Text);
             autUzdarbis = autorinesPajamos - (autorinesPajamos * (procentasNuoAut / 100));
            
-            textBox_isvedaAutoriniuAlga.Text = autUzdarbis.ToString();
-
-            return autUzdarbis;
+            textBox_isvedaAutoriniuAlga.Text = autUzdarbis.ToString("0.00");
         }
 
         private void textBox_ivestiAutorinesPopieriuje_TextChanged(object sender, EventArgs e) => 
@@ -112,7 +110,7 @@ namespace SalaryCalculator
 
         private void button_isvalytiTab1_Click(object sender, EventArgs e)
         {
-            Utilities.ResetAllControls(this);
+            Utilities.ResetAllControls(tabControl1.SelectedTab);
         }
 
         //Tab2
@@ -135,7 +133,14 @@ namespace SalaryCalculator
         {
             atlyginimasRankose = float.Parse(textBox_ivestiIRankas.Text);
 
-            algaPopieriuje = (1.45985f * atlyginimasRankose) - 87.5912f;
+            if (atlyginimasRankose <= 361)
+            {
+                algaPopieriuje = 1.1976f * (atlyginimasRankose - 27);  
+            }
+            else
+            {
+                algaPopieriuje = 1.45985f * (atlyginimasRankose - 87);
+            }
 
             gmpTab2 = (algaPopieriuje - (380 - (0.5f * (algaPopieriuje - 400)))) * 0.15f;
 
@@ -151,14 +156,14 @@ namespace SalaryCalculator
             {
                 AutorinesPopieriuje();
                 visoTab2 = algaPopieriuje + autPopieriuje;
-                textBox_isvedaVisoTab2.Text = visoTab2.ToString();
+                textBox_isvedaVisoTab2.Text = visoTab2.ToString("0.00");
             }
 
-            textBox_isvedaAntPop.Text = algaPopieriuje.ToString();
-            textBox_isvedaPajamuMok.Text = gmpTab2.ToString();
-            textBox_isvedaSodros.Text = sodraiTab2.ToString();
-            textBox_isvedaSveikatos.Text = sveikataiTab2.ToString();
-            textBox_isvedaDarbMokTab2.Text = darbdavysmoka.ToString();
+            textBox_isvedaAntPop.Text = algaPopieriuje.ToString("0.00");
+            textBox_isvedaPajamuMok.Text = gmpTab2.ToString("0.00");
+            textBox_isvedaSodros.Text = sodraiTab2.ToString("0.00");
+            textBox_isvedaSveikatos.Text = sveikataiTab2.ToString("0.00");
+            textBox_isvedaDarbMokTab2.Text = darbdavysmoka.ToString("0.00");
         }
 
         private void checkBox_autonominesTab2_CheckedChanged(object sender, EventArgs e)
@@ -169,6 +174,14 @@ namespace SalaryCalculator
             textBox_isvedaAutAntPop.Visible = checkBox_autonominesTab2.Checked;
             label_visoAntPop.Visible = checkBox_autonominesTab2.Checked;
             textBox_isvedaVisoTab2.Visible = checkBox_autonominesTab2.Checked;
+        }
+
+        private void AutorinesPopieriuje ()
+        {
+            autIRankas = float.Parse(textBox_ivestiAutIRankas.Text);
+            autPopieriuje = autIRankas / 0.621f;
+
+            textBox_isvedaAutAntPop.Text = autPopieriuje.ToString("0.00");
         }
 
         private void label_autSutTab2_Click(object sender, EventArgs e) =>
@@ -189,22 +202,12 @@ namespace SalaryCalculator
         private void textBox_isvedaVisoTab2_TextChanged(object sender, EventArgs e) =>
             textBox_isvedaVisoTab2.Visible = checkBox_autonominesTab2.Checked;
 
-        private float AutorinesPopieriuje ()
-        {
-            autIRankas = float.Parse(textBox_ivestiAutIRankas.Text);
-            autPopieriuje = autIRankas / 0.621f;
-
-            textBox_isvedaAutAntPop.Text = autPopieriuje.ToString();
-
-            return autPopieriuje;
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
-            Utilities.ResetAllControls(this);
+            Utilities.ResetAllControls(tabControl1.SelectedTab);
         }
 
-        //Reset
+        //Reset Button
         public class Utilities
         {
             public static void ResetAllControls(Control form)
@@ -223,6 +226,20 @@ namespace SalaryCalculator
                         checkBox.Checked = false;
                     }
                 }
+            }
+        }
+
+        //Avoid other input than numbers
+        private void AllowOnlyNumbers(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1)) {
+                e.Handled = true;
             }
         }
 
