@@ -200,7 +200,7 @@ namespace SalaryCalculator
                     if (control is TextBox)
                     {
                         TextBox textBox = (TextBox)control;
-                        textBox.Text = null;
+                        textBox.Text = "0";
                     }
 
                     if (control is CheckBox)
